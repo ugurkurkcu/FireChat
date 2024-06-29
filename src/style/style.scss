@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #242424;
+  color: #fff;
+  font-family: "Poppins";
+  min-height: 100vh;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.login {
+  background-color: #fff;
+  color: #000;
+  width: 60vw;
+  height: 50vh;
+  max-width: 600px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  @media (max-width: 700px) {
+    width: 90vw;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    color: #fff;
+    padding: 5px 10px;
+    font-family: "Poppins";
+    cursor: pointer;
+    &:hover {
+      background: #1a1a1a;
+      text-shadow: 0 0 2px yellow;
+    }
+  }
+  img {
+    width: 30px;
+  }
+}
+.room-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  color: #1a1a1a;
+  padding: 50px 60px;
+  gap: 30px;
+  text-align: center;
+  border-radius: 10px;
+
+  input {
+    padding: 5px 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    box-shadow: 2px 2px 10px rgb(0, 0, 0, 0.3);
+    border-radius: 8px;
+  }
+  button:first-of-type {
+    background-color: rgb(0, 176, 0);
+  }
+  button:last-child {
+    background-color: crimson;
+  }
+}
+
+button {
+  background-color: #1a1a1a;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: inset 0 -2px 3px #000, inset 1px 2px 4px white;
+  text-shadow: 0 0 4px black;
+  transition: all 0.2s;
+
+  &:hover {
+    filter: brightness(70%);
+  }
+}
+
+.chat-page {
+  background: linear-gradient(
+    to right,
+    #f99414,
+    #be5e22,
+    #6c2d06,
+    #531900,
+    #f99414
+  );
+  height: 70vh;
+  width: 70vw;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 800px;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px #471d03;
+
+  @media (max-width: 650px) {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    text-shadow: 0 0 3px rgb(59, 59, 59);
+
+    button {
+      background-color: #f99414;
+    }
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 20px;
+
+    input {
+      width: 50%;
+      border-radius: 10px;
+      padding: 5px 10px;
+      font-size: 15px;
+      box-shadow: inset 1px 1px 7px black;
+      outline: none;
+      border: none;
+    }
+
+    button {
+      background-color: #f99414;
+    }
+  }
+  main {
+    flex: 1;
+    margin: 5px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: inset 1px 1px 17px black;
+    border-radius: 4px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #be5e22;
+      border-radius: 4px;
+      box-shadow: inset -2px 1px 5px rgba(245, 222, 179, 0.565);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #6c2d06;
+    }
+
+    .msg-user {
+      place-self: end;
+      background-color: rgba(66, 83, 0, 0.788);
+      padding: 1px 11px;
+      border-radius: 10px 10px 0 10px;
+      box-shadow: inset 1px 2px 4px #d1d1d1, 3px 3px 3px rgb(52, 52, 52);
+      max-width: 200px;
+      overflow-wrap: break-word;
+    }
+    .msg-other {
+      div {
+        display: flex;
+        align-items: end;
+        margin-bottom: 5px;
+        gap: 5px;
+
+        img {
+          width: 30px;
+          border-radius: 50%;
+        }
+
+        span {
+          font: 400;
+          color: gray;
+          font-size: small;
+        }
+      }
+      p {
+        background-color: rgba(156, 144, 36, 0.788);
+        place-self: start;
+        width: fit-content;
+        padding: 1px 11px;
+        border-radius: 0 10px 10px 10px;
+        box-shadow: inset 1px 2px 4px #d1d1d1, 3px 3px 3px rgb(52, 52, 52);
+        margin-left: 35px;
+        max-width: 200px;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}
